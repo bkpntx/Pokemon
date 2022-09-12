@@ -22,13 +22,13 @@ public class Main {
     static Attack toxic = new Attack(0,false,true);
     static Attack metalclaw = new Attack(60,false,false);
     static Attack dragonclaw = new Attack(80,false,false);
-    static Pokemon charmander = new Pokemon(tackle,ember,scratch,smokescreen,60,"charmander", 1);
-    static Pokemon squirtle = new Pokemon(tackle,withdraw,watergun, bubblebeam,60,"squirtle",1);
-    static Pokemon bulbasaur = new Pokemon(tackle, scratch, vinewhip, leer,60,"bulbasaur",1);
-    static Pokemon gengar = new Pokemon(shadowball,suckerpunch,lick,sludgewave,210,"gengar",50);
-    static Pokemon dragonite = new Pokemon(dragontail,hydropump,slam,wingattack,285,"dragonite",75);
-    static Pokemon meowth = new Pokemon(tackle,scratch,willowisp,accelerock,360,"meowth",100);
-    static Pokemon dialga = new Pokemon(roaroftime,toxic,metalclaw,dragonclaw,360,"dialga: god of time",100);
+    static Pokemon charmander = new Pokemon(tackle,ember,scratch,smokescreen,30,"Charmander", 15);
+    static Pokemon squirtle = new Pokemon(tackle,withdraw,watergun, bubblebeam,30,"Squirtle",15);
+    static Pokemon bulbasaur = new Pokemon(tackle, scratch, vinewhip, leer,30,"Bulbasaur",15);
+    static Pokemon gengar = new Pokemon(shadowball,suckerpunch,lick,sludgewave,60,"Gengar",80);
+    static Pokemon dragonite = new Pokemon(dragontail,hydropump,slam,wingattack,80,"Dragonite",80);
+    static Pokemon meowth = new Pokemon(tackle,scratch,willowisp,accelerock,60,"Meowth",100);
+    static Pokemon dialga = new Pokemon(roaroftime,toxic,metalclaw,dragonclaw,150,"Dialga: God of Time",100);
     public static void fill(String current){
         while (current.length()<29){
             current=current+" ";
