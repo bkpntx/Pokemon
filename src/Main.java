@@ -5,9 +5,16 @@ public class Main {
     static Attack willOWisp = new Attack (0, true, false); // Will-O-Wisp is a non damaging move.
     static Attack branchPoke = new Attack(40,false,false);
     static Attack gunkShot = new Attack(85,false,true);
-    static Attack sludgeBomb = new Attack(90, false, true);
-
+    public static void fill(String current){
+        while (current.length()<29){
+            current=current+" ";
+        }
+        current=current+"*";
+    }
+    public static void basePrint(){
+        System.out.println("*****************************");
+        System.out.println("*"+);
+    }
     public static void main(String[] args) {
-
     }
 }
