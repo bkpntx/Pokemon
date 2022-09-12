@@ -32,16 +32,28 @@ public class Main {
     static Pokemon meowth = new Pokemon(tackle,scratch,willOWisp,accelerock,60,"Meowth",100);
     static Pokemon dialga = new Pokemon(roarOfTime,toxic,metalClaw,dragonClaw,150,"Dialga: God of Time",100);
 
-    public static void fill(String current){
-        while (current.length()<29){
+    static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
+    public static String fill(String current){
+        while (current.length()<28){
             current=current+" ";
         }
-        current=current+"*";
+        return current+"*";
     }
     public static void basePrint(){
         System.out.println("*****************************");
-        System.out.println("*"+);
+        System.out.println(fill("*"+p1[0].getName()+" Lvl "+p1[0].getLevel()));
+        System.out.println(fill("*HP: "+p1[0].getHealth()));
+        System.out.println("*                      0    *");
+        System.out.println("*                     -|-   *");
+        System.out.println("*                     / \\   *");
+        System.out.println("*                           *");
+        System.out.println("*    0                      *");
+        System.out.println("*   -|-       Dialga Lvl 100*");
+        System.out.printf("*   / \\               HP:%3d*%n",dialga.getHealth());
+        System.out.println("*___________________________*");
+
     }
     public static void main(String[] args) {
+        basePrint();
     }
 }
