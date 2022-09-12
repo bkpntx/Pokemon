@@ -25,11 +25,11 @@ public class Main {
 
 
     static Pokemon charmander = new Pokemon(tackle,ember,scratch,smokescreen,30,"Charmander", 15);
-    static Pokemon squirtle = new Pokemon(tackle,withdraw,waterGun, bubbleBeam,30,"Squirtle",15);
-    static Pokemon bulbasaur = new Pokemon(tackle, scratch, vineWhip, leer,30,"Bulbasaur",15);
-    static Pokemon gengar = new Pokemon(shadowBall,suckerPunch,lick,sludgeWave,60,"Gengar",80);
-    static Pokemon dragonite = new Pokemon(dragonTail,hydroPump,slam,wingAttack,80,"Dragonite",80);
-    static Pokemon meowth = new Pokemon(tackle,scratch,willOWisp,accelerock,60,"Meowth",100);
+    static Pokemon squirtle = new Pokemon(tackle,withdraw,waterGun, bubbleBeam,30,"  Squirtle",15);
+    static Pokemon bulbasaur = new Pokemon(tackle, scratch, vineWhip, leer,30," Bulbasaur",15);
+    static Pokemon gengar = new Pokemon(shadowBall,suckerPunch,lick,sludgeWave,60,"    Gengar",80);
+    static Pokemon dragonite = new Pokemon(dragonTail,hydroPump,slam,wingAttack,80," Dragonite",80);
+    static Pokemon meowth = new Pokemon(tackle,scratch,willOWisp,accelerock,60,"    Meowth",100);
     static Pokemon dialga = new Pokemon(roarOfTime,toxic,metalClaw,dragonClaw,150,"Dialga: God of Time",100);
 
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
@@ -41,15 +41,15 @@ public class Main {
     }
     public static void basePrint(){
         System.out.println("*****************************");
-        System.out.println(fill("*"+p1[0].getName()+" Lvl "+p1[0].getLevel()));
-        System.out.println(fill("*HP: "+p1[0].getHealth()));
+        System.out.println(fill("*"+dialga.getName()+" Lvl "+dialga.getLevel()));
+        System.out.println(fill("*HP: "+dialga.getHealth()));
         System.out.println("*                      0    *");
         System.out.println("*                     -|-   *");
         System.out.println("*                     / \\   *");
         System.out.println("*                           *");
         System.out.println("*    0                      *");
-        System.out.println("*   -|-       Dialga Lvl 100*");
-        System.out.printf("*   / \\               HP:%3d*%n",dialga.getHealth());
+        System.out.printf("*   -|-    %s Lvl %d*%n",p1[0].getName(),p1[0].getLevel());
+        System.out.printf("*   / \\                HP:%d*%n",p1[0].getHealth());
         System.out.println("*___________________________*");
         System.out.println("*                   |Atk|Bag*");
         System.out.println("*                   |Pok|Run*");
