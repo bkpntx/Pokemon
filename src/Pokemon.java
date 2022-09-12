@@ -12,7 +12,7 @@ public class Pokemon {
         this.secondMove = secondMove;
         this.thirdMove = thirdMove;
         this.fourthMove = fourthMove;
-        this.health = baseHealth;
+        this.health = baseHealth + (level * 2);
         this.level = level;
         this.name = name;
     }
