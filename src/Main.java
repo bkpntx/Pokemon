@@ -51,6 +51,9 @@ public class Main {
         System.out.println("*   -|-       Dialga Lvl 100*");
         System.out.printf("*   / \\               HP:%3d*%n",dialga.getHealth());
         System.out.println("*___________________________*");
+        System.out.println("*                   |Atk|Bag*");
+        System.out.println("*                   |Pok|Run*");
+        System.out.println("*****************************");
 
     }
     public static void main(String[] args) {
