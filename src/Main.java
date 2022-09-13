@@ -67,10 +67,10 @@ public class Main {
         System.out.println("*****************************");
         System.out.println("*Attacks                    *");
         System.out.println("*___________________________*");
-        System.out.println(fill("*"+p1[0].getFirstMove()));
-        System.out.println(fill("*"+p1[0].getSecondMove()));
-        System.out.println(fill("*"+p1[0].getThirdMove()));
-        System.out.println(fill("*"+p1[0].getFourthMove()));
+        System.out.println(fill("*"+p1[0].getFirstMove().getName()));
+        System.out.println(fill("*"+p1[0].getSecondMove().getName()));
+        System.out.println(fill("*"+p1[0].getThirdMove().getName()));
+        System.out.println(fill("*"+p1[0].getFourthMove().getName()));
         System.out.println("*                           *");
         System.out.println("*                           *");
         System.out.println("*                           *");
@@ -80,7 +80,21 @@ public class Main {
         System.out.println("*****************************");
     }
     public static void bagPrint(){
-
+        System.out.println("*****************************");
+        System.out.println("*Bag                        *");
+        System.out.println("*___________________________*");
+        System.out.println(fill("*"+items[0].getQuantity()+" "+items[0].getName()));
+        System.out.println(fill("*"+items[1].getQuantity()+" "+items[1].getName()));
+        System.out.println(fill("*"+items[2].getQuantity()+" "+items[2].getName()));
+        System.out.println(fill("*"+items[3].getQuantity()+" "+items[3].getName()));
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*****************************");
     }
     public static void pokemonPrint(){
         System.out.println("*****************************");
@@ -222,7 +236,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        basePrint();
+        bagPrint();
         enum menuOpen{battle, attack, bag, pokemon}
         System.out.println("Enter 0 to run, 1 to choose an attack, 2 to open your bag, and 3 to change pokemon");
     }
