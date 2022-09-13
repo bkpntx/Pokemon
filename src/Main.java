@@ -56,7 +56,10 @@ public class Main {
         System.out.println("*****************************");
 
     }
+
     public static void main(String[] args) {
         basePrint();
+        enum menuOpen{battle, attack, bag, pokemon}
+        System.out.println("Enter 0 to run, 1 to choose an attack, 2 to open your bag, and 3 to change pokemon");
     }
 }
