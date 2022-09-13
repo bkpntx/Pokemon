@@ -34,10 +34,10 @@ public class Main {
     static Pokemon dialga = new Pokemon(roarOfTime,toxic,metalClaw,dragonClaw,150,"Dialga: God of Time",100);
 
     //items
-    static Item potion = new Item(20);
-    static Item superPotion = new Item(50);
-    static Item hyperPotion = new Item(200);
-    static Pokeball pokeball = new Pokeball(0);
+    static Item potion = new Item(20,5);
+    static Item superPotion = new Item(50,2);
+    static Item hyperPotion = new Item(200,1);
+    static Pokeball pokeball = new Pokeball(0,1);
 
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
     static Item[] items = {potion, superPotion, hyperPotion, pokeball};
