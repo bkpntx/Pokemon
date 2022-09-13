@@ -37,8 +37,10 @@ public class Main {
     static Item potion = new Item(20);
     static Item superPotion = new Item(50);
     static Item hyperPotion = new Item(200);
+    static Pokeball pokeball = new Pokeball(0);
 
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
+    static Item[] items = {potion, superPotion, hyperPotion, pokeball};
     public static String fill(String current){
         while (current.length()<28){
             current=current+" ";
