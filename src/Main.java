@@ -62,13 +62,48 @@ public class Main {
         System.out.println("*****************************");
     }
     public static void atkPrint(){
-
+        System.out.println("*****************************");
+        System.out.println("*Attacks                    *");
+        System.out.println("*___________________________*");
+        System.out.println(fill("*"+p1[0].getFirstMove()));
+        System.out.println(fill("*"+p1[0].getSecondMove()));
+        System.out.println(fill("*"+p1[0].getThirdMove()));
+        System.out.println(fill("*"+p1[0].getFourthMove()));
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*****************************");
     }
     public static void bagPrint(){
 
     }
     public static void pokemonPrint(){
-
+        System.out.println("*****************************");
+        System.out.println("*Pokemon                    *");
+        System.out.println("*___________________________*");
+        if (p1[1].getHealth()!=0){
+            System.out.println(fill("*Lvl "+p1[1].getLevel()+" "+p1[1].getName()));
+        }
+        if (p1[2].getHealth()!=0){
+            System.out.println(fill("*Lvl "+p1[2].getLevel()+" "+p1[2].getName()));
+        }
+        if (p1[3].getHealth()!=0){
+            System.out.println(fill("*Lvl "+p1[3].getLevel()+" "+p1[3].getName()));
+        }
+        if (p1[4].getHealth()!=0){
+            System.out.println(fill("*Lvl "+p1[4].getLevel()+" "+p1[4].getName()));
+        }
+        if (p1[5].getHealth()!=0){
+            System.out.println(fill("*Lvl "+p1[5].getLevel()+" "+p1[5].getName()));
+        }
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*                           *");
+        System.out.println("*****************************");
     }
 
 
