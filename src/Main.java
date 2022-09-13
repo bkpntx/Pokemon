@@ -54,6 +54,14 @@ public class Main {
         System.out.println("*                   |Atk|Bag*");
         System.out.println("*                   |Pok|Run*");
         System.out.println("*****************************");
+    }
+    public static void atkPrint(){
+
+    }
+    public static void bagPrint(){
+
+    }
+    public static void pokemonPrint(){
 
     }
 
