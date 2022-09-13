@@ -1,4 +1,5 @@
 public class Main {
+    //attacks
     static Attack tackle = new Attack(35,false,false);
     static Attack accelerock = new Attack(40,false,false);
     static Attack ember = new Attack(40,false,false);
@@ -23,7 +24,7 @@ public class Main {
     static Attack metalClaw = new Attack(60,false,false);
     static Attack dragonClaw = new Attack(80,false,false);
 
-
+    //pokemon
     static Pokemon charmander = new Pokemon(tackle,ember,scratch,smokescreen,30,"Charmander", 15);
     static Pokemon squirtle = new Pokemon(tackle,withdraw,waterGun, bubbleBeam,30,"  Squirtle",15);
     static Pokemon bulbasaur = new Pokemon(tackle, scratch, vineWhip, leer,30," Bulbasaur",15);
@@ -31,6 +32,11 @@ public class Main {
     static Pokemon dragonite = new Pokemon(dragonTail,hydroPump,slam,wingAttack,80," Dragonite",80);
     static Pokemon meowth = new Pokemon(tackle,scratch,willOWisp,accelerock,60,"    Meowth",100);
     static Pokemon dialga = new Pokemon(roarOfTime,toxic,metalClaw,dragonClaw,150,"Dialga: God of Time",100);
+
+    //items
+    static Item potion = new Item(20);
+    static Item superPotion = new Item(50);
+    static Item hyperPotion = new Item(200);
 
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
     public static String fill(String current){
