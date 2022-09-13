@@ -1,28 +1,28 @@
 public class Main {
     //attacks
-    static Attack tackle = new Attack(35,false,false);
-    static Attack accelerock = new Attack(40,false,false);
-    static Attack ember = new Attack(40,false,false);
-    static Attack scratch = new Attack(30,false,false);
-    static Attack smokescreen = new Attack(0,false,false);
-    static Attack willOWisp = new Attack(0,true,false);
-    static Attack bubbleBeam = new Attack(50, false,false);
-    static Attack withdraw = new Attack(0,false,false);
-    static Attack waterGun = new Attack(40,false,false);
-    static Attack vineWhip = new Attack(40,false,false);
-    static Attack leer = new Attack(0,false,false);
-    static Attack shadowBall = new Attack(80,false,false);
-    static Attack suckerPunch = new Attack(20,false,false);
-    static Attack lick = new Attack(10,false,false);
-    static Attack sludgeWave = new Attack(60,false,true);
-    static Attack dragonTail = new Attack(40,false,false);
-    static Attack hydroPump = new Attack(120,false,false);
-    static Attack slam = new Attack(70,false,false);
-    static Attack wingAttack = new Attack(50,false,false);
-    static Attack roarOfTime = new Attack(140,false,false);
-    static Attack toxic = new Attack(0,false,true);
-    static Attack metalClaw = new Attack(60,false,false);
-    static Attack dragonClaw = new Attack(80,false,false);
+    static Attack tackle = new Attack("Tackle", 35,false,false);
+    static Attack accelerock = new Attack("Accelerock",40,false,false);
+    static Attack ember = new Attack("Ember",40,false,false);
+    static Attack scratch = new Attack("Scratch",30,false,false);
+    static Attack smokescreen = new Attack("Smokescreen",0,false,false);
+    static Attack willOWisp = new Attack("Will O' Wisp",0,true,false);
+    static Attack bubbleBeam = new Attack("Bubblebeam", 50, false,false);
+    static Attack withdraw = new Attack("Withdraw",0,false,false);
+    static Attack waterGun = new Attack("Water Gun",40,false,false);
+    static Attack vineWhip = new Attack("Vine Whip",40,false,false);
+    static Attack leer = new Attack("Leer",0,false,false);
+    static Attack shadowBall = new Attack("Shadow Ball",80,false,false);
+    static Attack suckerPunch = new Attack("Sucker Punch",20,false,false);
+    static Attack lick = new Attack("Lick",10,false,false);
+    static Attack sludgeWave = new Attack("Sludge Wave",60,false,true);
+    static Attack dragonTail = new Attack("Dragon Tail",40,false,false);
+    static Attack hydroPump = new Attack("Hydro Pump",120,false,false);
+    static Attack slam = new Attack("Slam",70,false,false);
+    static Attack wingAttack = new Attack("Wing Attack",50,false,false);
+    static Attack roarOfTime = new Attack("Roar of Time",140,false,false);
+    static Attack toxic = new Attack("Toxic",0,false,true);
+    static Attack metalClaw = new Attack("Metal Claw",60,false,false);
+    static Attack dragonClaw = new Attack("Dragon Claw",80,false,false);
 
     //pokemon
     static Pokemon charmander = new Pokemon(tackle,ember,scratch,smokescreen,30,"Charmander", 15);
