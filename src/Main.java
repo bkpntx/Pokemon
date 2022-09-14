@@ -158,15 +158,9 @@ public class Main {
         if (p1[0].getHealth()<=0){
             pokemonPrint(); // Written by Carson
             System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
-            System.out.print("Enter");
             for (int i = 1; i < p1.length; i++) { // i starts at one since a pokemon cannot be swapped for itself.
-                if (i + 1 == p1.length && p1[i].getHealth() != 0) {
-                    System.out.print(" and " + i + " for " + p1[i].getName() + ".");
-                    System.out.println();
-                } else {
-                    if (p1[i].getHealth() != 0) {
-                        System.out.print(" " + i + " for " + p1[i].getName() + ",");
-                    }
+                if (p1[i].getHealth()>0){
+                    System.out.println(i+": "+p1[i].getName());
                 }
             }
             int swapFor = input.nextInt();
@@ -291,15 +285,9 @@ public class Main {
                 case pokemon:
                     pokemonPrint(); // Written by Carson
                     System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
-                    System.out.print("Enter");
                     for (int i = 1; i < p1.length; i++) { // i starts at one since a pokemon cannot be swapped for itself.
-                        if (i + 1 == p1.length && p1[i].getHealth() != 0) {
-                            System.out.print(" and " + i + " for " + p1[i].getName() + ".");
-                            System.out.println();
-                        } else {
-                            if (p1[i].getHealth() != 0) { // A Pokemon with no health cannot be swapped in, thus it will not appear as a choice.
-                                System.out.print(" " + i + " for " + p1[i].getName() + ",");
-                            }
+                        if (p1[i].getHealth()>0){
+                            System.out.println(i+": "+p1[i].getName());
                         }
                     }
                     int swapFor = input.nextInt();
