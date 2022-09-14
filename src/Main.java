@@ -235,9 +235,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // written by Harris
-        basePrint();
         while (0 == 0) { // Written by Carson
+            basePrint();
             System.out.println("Please select an option to use 1-4:");
             int option = input.nextInt();
             switch (menu(option)) {
@@ -311,6 +310,8 @@ public class Main {
                     run();
                     break;
             }
+            basePrint();
+            enemyPlay(); // Enemy will move after every turn, regardless of user's choice.
         }
     }
 }
