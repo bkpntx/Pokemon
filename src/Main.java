@@ -165,6 +165,7 @@ public class Main {
             if(target.getHealth() > maxHealth){
                 target.setHealth(maxHealth); // Pokemon cannot exceed max health, so they will just be set to its max health if they do.
             }
+            System.out.println(item.getName()+"has been used on "+target.getName()+".");
         }
         if(item.getHealing() == 0){ // If an item has no healing, then it is a pokeball.
             System.out.println(target.getName()+" has been captured. Congratulations, the game is over!");
@@ -205,13 +206,44 @@ public class Main {
     public static void main(String[] args) {
         // written by Harris
         basePrint();
-        System.out.println("Please select an option to use 1-4");
+        System.out.println("Please select an option to use 1-4..");
         int option = input.nextInt();
         switch(menu(option)){
             case attack: atkPrint();
-            case bag: bagPrint();
+            break;
+            case bag: bagPrint(); // Written by Carson
+                System.out.print("Enter");
+                for (int i = 0; i < items.length; i++){
+                    if (i + 1 == items.length){
+                        System.out.print(" and " +i+" for "+items[i].getName()+".");
+                    }
+                    else{
+                        System.out.print(" "+i+ " for "+items[i].getName()+",");
+                    }
+                }
+                int desiredItem = input.nextInt();
+                if (items[desiredItem].getName().contains("ball")){ // If the desired item is a ball, a ball will be thrown at the pokemon currently out.
+                    bag(items[desiredItem], p2[0]);
+                }
+                else{
+                    System.out.println("Which pokemon would you like to use "+items[desiredItem].getName()+" on?");
+                    System.out.print("Enter");
+                    for (int i = 0; i < p1.length; i++){
+                        if (i + 1 == p1.length){
+                            System.out.print(" and " +i+" for "+p1[i].getName()+".");
+                        }
+                        else{
+                            System.out.print(" "+i+ " for "+p1[i].getName()+",");
+                        }
+                    }
+                }
+                int desiredPokemon = input.nextInt();
+                bag(items[desiredItem],p1[desiredPokemon]);
+                break;
             case pokemon: pokemonPrint();
+            break;
             case run: run();
+            break;
         }
     }
 }
