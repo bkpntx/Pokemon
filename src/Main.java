@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 // Work shared between Brantley, Carson and Harris
 public class Main {
@@ -194,25 +195,23 @@ public class Main {
 
     public static menuOpen menu(int option){ //written by Harris
         switch(option){
-            case 0: return menuOpen.attack;
-            case 1: return menuOpen.bag;
-            case 2: return menuOpen.pokemon;
-            case 3: return menuOpen.run;
+            case 1: return menuOpen.attack;
+            case 2: return menuOpen.bag;
+            case 3: return menuOpen.pokemon;
+            case 4: return menuOpen.run;
         }
         return null;
     }
 
     public static void main(String[] args) {
-        bagPrint();
-        menuOpen menu = menuOpen.battle;
-        System.out.println("Enter 0 to run, 1 to choose an attack, 2 to open your bag, and 3 to change pokemon");
-        int response = input.nextInt();
-
-        switch(response){
-            case 0: run();
-            case 1: return menuOpen.;
-            case 2: ;
-            case 3: return menuOpen.pokemon;
+        basePrint();
+        System.out.println("Please select an option to use 1-4");
+        int option = input.nextInt();
+        switch(menu(option)){
+            case attack: atkPrint();
+            case bag: bagPrint();
+            case pokemon: pokemonPrint();
+            case run: run();
         }
     }
 }
