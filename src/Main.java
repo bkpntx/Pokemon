@@ -116,7 +116,7 @@ public class Main {
         System.out.println("*___________________________*");
         for (int i = 1; i < p1.length; i++) {
             if (p1[i].getHealth() != 0) {
-                System.out.println(fill(i+"*:Lvl " + p1[i].getLevel() + " " + p1[i].getName()));
+                System.out.println(fill("*"+i+":Lvl " + p1[i].getLevel() + " " + p1[i].getName()));
             }
         }
         System.out.println("*                           *");
