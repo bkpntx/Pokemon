@@ -6,15 +6,19 @@ public class Pokemon { // Carson
     int health;
     int level;
     String name;
+    boolean isBurned;
+    boolean isPoisoned;
 
     public Pokemon(Attack firstMove, Attack secondMove, Attack thirdMove, Attack fourthMove, int baseHealth, String name, int level){
         this.firstMove = firstMove;
         this.secondMove = secondMove;
         this.thirdMove = thirdMove;
         this.fourthMove = fourthMove;
-        this.health = baseHealth + (level * 2);
+        this.health = baseHealth + (level * 2); // All Pokemon's health will increase by 2 per level.
         this.level = level;
         this.name = name;
+        isBurned = false; // Pokemon will never have a status effect by default.
+        isPoisoned = false;
     }
 
     public Attack getFirstMove() {
@@ -64,5 +68,19 @@ public class Pokemon { // Carson
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isBurned() {
+        return isBurned;
+    }
+    public void setBurned(boolean burned) {
+        isBurned = burned;
+    }
+
+    public boolean isPoisoned() {
+        return isPoisoned;
+    }
+    public void setPoisoned(boolean poisoned) {
+        isPoisoned = poisoned;
     }
 }
