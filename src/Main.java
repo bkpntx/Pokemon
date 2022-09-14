@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     static enum menuOpen{run, attack, bag, pokemon}
     static Scanner input = new Scanner(System.in);
-    //attacks written by Harris and Carson
+    //attacks written by Harris
     static Attack tackle = new Attack("Tackle", 35,false,false);
     static Attack accelerock = new Attack("Accelerock",40,false,false);
     static Attack ember = new Attack("Ember",40,false,false);
@@ -129,7 +129,7 @@ public class Main {
     public static void menu(){
         Scanner input = new Scanner(System.in);
     }
-    //Brantley wrote this
+    // written by Brantley
     public static void enemyPlay(){
         if (dialga.isBurned){
             dialga.setHealth(dialga.getHealth()-5);
@@ -151,13 +151,13 @@ public class Main {
         menu();
     }
 
-    // Written by Carson
+    // written by Carson
     public static void run(){
     System.out.println("You have fled the battle!");
     System.exit(0);
     }
 
-    // Written by Carson
+    // written by Carson
     public static void bag(Item item, Pokemon target){
         int maxHealth = target.getMaxHealth();
         if (item.getHealing() > 0){
@@ -173,6 +173,7 @@ public class Main {
         }
     }
 
+    // written by Brantley
     public static void attack(Attack hit, Pokemon target){
         target.setHealth(target.getHealth()-hit.getDamage());
         if (hit.isInflictsBurn()){
@@ -183,7 +184,8 @@ public class Main {
         }
     }
 
-    public static void switchPokemon(Pokemon pokemon){ //written by Harris
+    // written by Harris
+    public static void switchPokemon(Pokemon pokemon){
         Pokemon temporary = p1[0];
         for(int i = 1; i<6; i++){
             if(pokemon == p1[i]){
@@ -193,7 +195,8 @@ public class Main {
         }
     }
 
-    public static menuOpen menu(int option){ //written by Harris
+    // written by Harris
+    public static menuOpen menu(int option){
         switch(option){
             case 1: return menuOpen.attack;
             case 2: return menuOpen.bag;
@@ -206,10 +209,10 @@ public class Main {
     public static void main(String[] args) {
         // written by Harris
         basePrint();
-        System.out.println("Please select an option to use 1-4..");
+        System.out.println("Please select an option to use 1-4:");
         int option = input.nextInt();
         switch(menu(option)){
-            case attack: atkPrint(); //Brantley
+            case attack: atkPrint(); // written by Brantley
                 System.out.println("Which attack 1-4 would you like to use:");
                 int atk = input.nextInt();
                 switch (atk){
@@ -223,7 +226,7 @@ public class Main {
                         break;
                 }
                 break;
-            case bag: bagPrint(); // Written by Carson
+            case bag: bagPrint(); // written by Carson
                 System.out.print("Enter");
                 for (int i = 0; i < items.length; i++){
                     if (i + 1 == items.length){
