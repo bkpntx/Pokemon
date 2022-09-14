@@ -1,6 +1,7 @@
 import java.util.Scanner;
 // Work shared between Brantley, Carson and Harris
 public class Main {
+    static enum menuOpen{run, attack, bag, pokemon}
     static Scanner input = new Scanner(System.in);
     //attacks written by Harris and Carson
     static Attack tackle = new Attack("Tackle", 35,false,false);
@@ -181,26 +182,37 @@ public class Main {
         }
     }
 
-    public static void switchPokemon(){ //written by Harris
-        System.out.println("Input a pokemon to switch to: ");
-        int pokeNumber = input.nextInt();
+    public static void switchPokemon(Pokemon pokemon){ //written by Harris
         Pokemon temporary = p1[0];
-        p1[0] = p1[pokeNumber];
-        p1[pokeNumber] = temporary;
+        for(int i = 1; i<6; i++){
+            if(pokemon == p1[i]){
+                p1[0] = pokemon;
+                p1[i] = temporary;
+            }
+        }
+    }
+
+    public static menuOpen menu(int option){
+        switch(option){
+            case 0: return menuOpen.attack;
+            case 1: return menuOpen.bag;
+            case 2: return menuOpen.pokemon;
+            case 3: return menuOpen.run;
+        }
+        return null;
     }
 
     public static void main(String[] args) {
         bagPrint();
-        enum menuOpen{battle, attack, bag, pokemon}
         menuOpen menu = menuOpen.battle;
         System.out.println("Enter 0 to run, 1 to choose an attack, 2 to open your bag, and 3 to change pokemon");
         int response = input.nextInt();
 
         switch(response){
             case 0: run();
-            case 1: ;
+            case 1: return menuOpen.;
             case 2: ;
-            case 3: ;
+            case 3: return menuOpen.pokemon;
         }
     }
 }
