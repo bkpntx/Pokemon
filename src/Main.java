@@ -28,11 +28,11 @@ public class Main {
 
     //pokemon
     static Pokemon charmander = new Pokemon(tackle,ember,scratch,smokescreen,30,"Charmander", 15);
-    static Pokemon squirtle = new Pokemon(tackle,withdraw,waterGun, bubbleBeam,30,"  Squirtle",15);
-    static Pokemon bulbasaur = new Pokemon(tackle, scratch, vineWhip, leer,30," Bulbasaur",15);
-    static Pokemon gengar = new Pokemon(shadowBall,suckerPunch,lick,sludgeWave,60,"    Gengar",80);
-    static Pokemon dragonite = new Pokemon(dragonTail,hydroPump,slam,wingAttack,80," Dragonite",80);
-    static Pokemon meowth = new Pokemon(tackle,scratch,willOWisp,accelerock,60,"    Meowth",100);
+    static Pokemon squirtle = new Pokemon(tackle,withdraw,waterGun, bubbleBeam,30,"Squirtle",15);
+    static Pokemon bulbasaur = new Pokemon(tackle, scratch, vineWhip, leer,30,"Bulbasaur",15);
+    static Pokemon gengar = new Pokemon(shadowBall,suckerPunch,lick,sludgeWave,60,"Gengar",80);
+    static Pokemon dragonite = new Pokemon(dragonTail,hydroPump,slam,wingAttack,80,"Dragonite",80);
+    static Pokemon meowth = new Pokemon(tackle,scratch,willOWisp,accelerock,60,"Meowth",100);
     static Pokemon dialga = new Pokemon(roarOfTime,toxic,metalClaw,dragonClaw,150,"Dialga: God of Time",100);
 
     //items
@@ -70,7 +70,7 @@ public class Main {
         System.out.println("*Attacks                    *");
         System.out.println("*___________________________*");
         System.out.println(fill("*"+p1[0].getFirstMove().getName()));
-        System.out.println(fill("*"+p1[0].getSecondMove().getName() ));
+        System.out.println(fill("*"+p1[0].getSecondMove().getName()));
         System.out.println(fill("*"+p1[0].getThirdMove().getName()));
         System.out.println(fill("*"+p1[0].getFourthMove().getName()));
         System.out.println("*                           *");
@@ -85,10 +85,9 @@ public class Main {
         System.out.println("*****************************");
         System.out.println("*Bag                        *");
         System.out.println("*___________________________*");
-        System.out.println(fill("*"+items[0].getQuantity()+"x "+items[0].getName()));
-        System.out.println(fill("*"+items[1].getQuantity()+"x "+items[1].getName()));
-        System.out.println(fill("*"+items[2].getQuantity()+"x "+items[2].getName()));
-        System.out.println(fill("*"+items[3].getQuantity()+"x "+items[3].getName()));
+        for(int i = 0; i < items.length; i++) {
+            System.out.println(fill("*" + items[i].getQuantity() + "x " + items[i].getName()));
+        }
         System.out.println("*                           *");
         System.out.println("*                           *");
         System.out.println("*                           *");
@@ -102,20 +101,10 @@ public class Main {
         System.out.println("*****************************");
         System.out.println("*Pokemon                    *");
         System.out.println("*___________________________*");
-        if (p1[1].getHealth()!=0){
-            System.out.println(fill("*Lvl "+p1[1].getLevel()+" "+p1[1].getName()));
-        }
-        if (p1[2].getHealth()!=0){
-            System.out.println(fill("*Lvl "+p1[2].getLevel()+" "+p1[2].getName()));
-        }
-        if (p1[3].getHealth()!=0){
-            System.out.println(fill("*Lvl "+p1[3].getLevel()+" "+p1[3].getName()));
-        }
-        if (p1[4].getHealth()!=0){
-            System.out.println(fill("*Lvl "+p1[4].getLevel()+" "+p1[4].getName()));
-        }
-        if (p1[5].getHealth()!=0){
-            System.out.println(fill("*Lvl "+p1[5].getLevel()+" "+p1[5].getName()));
+        for (int i = 1; i < p1.length; i++) {
+            if (p1[i].getHealth() != 0) {
+                System.out.println(fill("*Lvl " + p1[i].getLevel() + " " + p1[i].getName()));
+            }
         }
         System.out.println("*                           *");
         System.out.println("*                           *");
@@ -171,79 +160,10 @@ public class Main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public static void main(String[] args) {
         bagPrint();
         enum menuOpen{battle, attack, bag, pokemon}
         System.out.println("Enter 0 to run, 1 to choose an attack, 2 to open your bag, and 3 to change pokemon");
+        pokemonPrint();
     }
 }
