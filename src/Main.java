@@ -151,7 +151,10 @@ public class Main {
 
     public static void switchPokemon(){
         System.out.println("Input a pokemon to switch to: ");
-
+        int pokeNumber = input.nextInt();
+        Pokemon temporary = p1[0];
+        p1[0] = p1[pokeNumber];
+        p1[pokeNumber] = temporary;
     }
 
 
