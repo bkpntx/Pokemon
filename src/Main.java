@@ -138,8 +138,14 @@ public class Main {
 
     }
 
-    public static void attack(){
-
+    public static void attack(Attack hit, Pokemon target){
+        target.setHealth(target.getHealth()-hit.getDamage());
+        if (hit.isInflictsBurn()){
+            target.setBurned(true);
+        }
+        if (hit.isInflictsPoison()){
+            target.setPoisoned(true);
+        }
     }
 
     public static void switchPokemon(){
