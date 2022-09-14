@@ -148,7 +148,9 @@ public class Main {
             case 3: attack(dialga.getFourthMove(),p1[0]);
         }
         moveNum=(moveNum+1)%4;
-        menu();
+        if (p1[0].getHealth()<=0){
+
+        }
     }
 
     // Written by Carson
