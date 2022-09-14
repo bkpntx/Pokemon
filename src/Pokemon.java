@@ -4,7 +4,7 @@ public class Pokemon { // Carson (Entire Class)
     Attack thirdMove;
     Attack fourthMove;
     int health;
-    static int maxHealth;
+    int maxHealth;
     int level;
     String name;
     boolean isBurned;
@@ -16,7 +16,7 @@ public class Pokemon { // Carson (Entire Class)
         this.thirdMove = thirdMove;
         this.fourthMove = fourthMove;
         this.health = baseHealth + (level * 2); // All Pokemon's health will increase by 2 per level.
-        this.maxHealth = baseHealth + (level * 2); // This is the same as regular health, but it is static.
+        this.maxHealth = baseHealth + (level * 2); // This is the same as regular health, but it will never change.
         this.level = level;
         this.name = name;
         isBurned = false; // Pokemon will never have a status effect by default.
@@ -58,7 +58,7 @@ public class Pokemon { // Carson (Entire Class)
         this.health = health;
     }
 
-    public static int getMaxHealth() {
+    public int getMaxHealth() {
         return maxHealth;
     }
 

@@ -158,14 +158,15 @@ public class Main {
 
     // Written by Carson
     public static void bag(Item item, Pokemon target){
+        int maxHealth = target.getMaxHealth();
         if (item.getHealing() > 0){
             target.setHealth(target.getHealth() + item.getHealing());
-            if(target.getHealth() > target.getMaxHealth()){
-                target.setHealth(target.getMaxHealth()); // Pokemon cannot exceed max health, so they will just be set to its max health if they do.
+            if(target.getHealth() > maxHealth){
+                target.setHealth(maxHealth); // Pokemon cannot exceed max health, so they will just be set to its max health if they do.
             }
         }
-        if(item.getHealing() == 0){
-            System.out.println(p2[0].getName()+" has been captured. Congratulations, the game is over!");
+        if(item.getHealing() == 0){ // If an item has no healing, then it is a pokeball.
+            System.out.println(target.getName()+" has been captured. Congratulations, the game is over!");
             System.exit(0);
         }
     }
@@ -232,6 +233,8 @@ public class Main {
         enum menuOpen{battle, attack, bag, pokemon}
         System.out.println("Enter 0 to run, 1 to choose an attack, 2 to open your bag, and 3 to change pokemon");
         pokemonPrint();
-
+        charmander.setHealth(10);
+        bag(hyperPotion, charmander);
+        System.out.println(charmander.getHealth());
     }
 }
