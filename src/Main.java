@@ -78,10 +78,10 @@ public class Main {
         System.out.println("*****************************");
         System.out.println("*Attacks                    *");
         System.out.println("*___________________________*");
-        System.out.println(fill("*"+p1[0].getFirstMove().getName()));
-        System.out.println(fill("*"+p1[0].getSecondMove().getName()));
-        System.out.println(fill("*"+p1[0].getThirdMove().getName()));
-        System.out.println(fill("*"+p1[0].getFourthMove().getName()));
+        System.out.println(fill("*1:"+p1[0].getFirstMove().getName()));
+        System.out.println(fill("*2:"+p1[0].getSecondMove().getName()));
+        System.out.println(fill("*3:"+p1[0].getThirdMove().getName()));
+        System.out.println(fill("*4:"+p1[0].getFourthMove().getName()));
         System.out.println("*                           *");
         System.out.println("*                           *");
         System.out.println("*                           *");
@@ -116,7 +116,7 @@ public class Main {
         System.out.println("*___________________________*");
         for (int i = 1; i < p1.length; i++) {
             if (p1[i].getHealth() != 0) {
-                System.out.println(fill("*Lvl " + p1[i].getLevel() + " " + p1[i].getName()));
+                System.out.println(fill(i+"*:Lvl " + p1[i].getLevel() + " " + p1[i].getName()));
             }
         }
         System.out.println("*                           *");
@@ -209,8 +209,20 @@ public class Main {
         System.out.println("Please select an option to use 1-4..");
         int option = input.nextInt();
         switch(menu(option)){
-            case attack: atkPrint();
-            break;
+            case attack: atkPrint(); //Brantley
+                System.out.println("Which attack 1-4 would you like to use:");
+                int atk = input.nextInt();
+                switch (atk){
+                    case 1: attack(p1[0].getFirstMove(),dialga);
+                        break;
+                    case 2: attack(p1[0].getSecondMove(),dialga);
+                        break;
+                    case 3: attack(p1[0].getThirdMove(),dialga);
+                        break;
+                    case 4: attack(p1[0].getFourthMove(),dialga);
+                        break;
+                }
+                break;
             case bag: bagPrint(); // Written by Carson
                 System.out.print("Enter");
                 for (int i = 0; i < items.length; i++){
