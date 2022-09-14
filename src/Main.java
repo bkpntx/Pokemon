@@ -1,7 +1,7 @@
 import java.util.Scanner;
 // Work shared between Brantley, Carson and Harris
 public class Main {
-    //attacks
+    //attacks written by Harris
     static Attack tackle = new Attack("Tackle", 35,false,false);
     static Attack accelerock = new Attack("Accelerock",40,false,false);
     static Attack ember = new Attack("Ember",40,false,false);
@@ -26,7 +26,7 @@ public class Main {
     static Attack metalClaw = new Attack("Metal Claw",60,false,false);
     static Attack dragonClaw = new Attack("Dragon Claw",80,false,false);
 
-    //pokemon
+    //pokemon written by Harris
     static Pokemon charmander = new Pokemon(tackle,ember,scratch,smokescreen,30,"Charmander", 15);
     static Pokemon squirtle = new Pokemon(tackle,withdraw,waterGun, bubbleBeam,30,"Squirtle",15);
     static Pokemon bulbasaur = new Pokemon(tackle, scratch, vineWhip, leer,30,"Bulbasaur",15);
@@ -35,12 +35,13 @@ public class Main {
     static Pokemon meowth = new Pokemon(tackle,scratch,willOWisp,accelerock,60,"Meowth",100);
     static Pokemon dialga = new Pokemon(roarOfTime,toxic,metalClaw,dragonClaw,150,"Dialga: God of Time",100);
 
-    //items
+    //items written by Harris
     static Item potion = new Item("Potion", 20,5);
     static Item superPotion = new Item("Super Potion", 50,2);
     static Item hyperPotion = new Item("Hyper Potion", 200,1);
     static Pokeball pokeball = new Pokeball("Pokeball",0,1);
 
+    //written by Brantley
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
     static Item[] items = {potion, superPotion, hyperPotion, pokeball};
     public static String fill(String current){
@@ -49,6 +50,8 @@ public class Main {
         }
         return current+"*";
     }
+
+    //written by Brantley
     public static void basePrint(){
         System.out.println("*****************************");
         System.out.println(fill("*"+dialga.getName()+" Lvl "+dialga.getLevel()));
@@ -65,6 +68,8 @@ public class Main {
         System.out.println("*                   |Pok|Run*");
         System.out.println("*****************************");
     }
+
+    //written by Brantley
     public static void atkPrint(){
         System.out.println("*****************************");
         System.out.println("*Attacks                    *");
@@ -81,6 +86,8 @@ public class Main {
         System.out.println("*                           *");
         System.out.println("*****************************");
     }
+
+    //written by Brantley
     public static void bagPrint(){
         System.out.println("*****************************");
         System.out.println("*Bag                        *");
@@ -97,6 +104,8 @@ public class Main {
         System.out.println("*                           *");
         System.out.println("*****************************");
     }
+
+    //written by Brantley
     public static void pokemonPrint(){
         System.out.println("*****************************");
         System.out.println("*Pokemon                    *");
@@ -111,6 +120,7 @@ public class Main {
         System.out.println("*                           *");
         System.out.println("*                           *");
         System.out.println("*****************************");
+
     }
     public static void menu(){
         Scanner input = new Scanner(System.in);
