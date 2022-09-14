@@ -1,4 +1,5 @@
 public class Attack {
+    // Brantley and Harris
     private int damage;
     private String name;
     private boolean inflictsBurn;

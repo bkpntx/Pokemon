@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+// Work shared between Brantley, Carson and Harris
 public class Main {
     //attacks
     static Attack tackle = new Attack("Tackle", 35,false,false);
@@ -120,7 +120,8 @@ public class Main {
     }
 
     public static void run(){
-
+    System.out.println("You have fled the battle!");
+    System.exit(0);
     }
 
     public static void bag(){
