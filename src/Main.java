@@ -165,7 +165,7 @@ public class Main {
             if(target.getHealth() > maxHealth){
                 target.setHealth(maxHealth); // Pokemon cannot exceed max health, so they will just be set to its max health if they do.
             }
-            System.out.println(item.getName()+"has been used on "+target.getName()+".");
+            System.out.println(item.getName()+" has been used on "+target.getName()+".");
         }
         if(item.getHealing() == 0){ // If an item has no healing, then it is a pokeball.
             System.out.println(target.getName()+" has been captured. Congratulations, the game is over!");
@@ -216,6 +216,7 @@ public class Main {
                 for (int i = 0; i < items.length; i++){
                     if (i + 1 == items.length){
                         System.out.print(" and " +i+" for "+items[i].getName()+".");
+                        System.out.println();
                     }
                     else{
                         System.out.print(" "+i+ " for "+items[i].getName()+",");
@@ -231,6 +232,7 @@ public class Main {
                     for (int i = 0; i < p1.length; i++){
                         if (i + 1 == p1.length){
                             System.out.print(" and " +i+" for "+p1[i].getName()+".");
+                            System.out.println();
                         }
                         else{
                             System.out.print(" "+i+ " for "+p1[i].getName()+",");
