@@ -43,6 +43,7 @@ public class Main {
     static Pokeball pokeball = new Pokeball("Pokeball",0,1);
 
     //written by Brantley
+    static int moveNum = 0;
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
     static Pokemon[] p2 = {dialga};
     static Item[] items = {potion, superPotion, hyperPotion, pokeball};
@@ -127,8 +128,26 @@ public class Main {
     public static void menu(){
         Scanner input = new Scanner(System.in);
     }
+    //Brantley wrote this
     public static void enemyPlay(){
-
+        if (dialga.isBurned){
+            dialga.setHealth(dialga.getHealth()-5);
+        }
+        if (dialga.isPoisoned){
+            dialga.setHealth(dialga.getHealth()-10);
+        }
+        if (dialga.getHealth()<=0){
+            System.out.println("The player has won");
+            System.exit(0);
+        }
+        switch (moveNum){
+            case 0: attack(dialga.getFirstMove(),p1[0]);
+            case 1: attack(dialga.getSecondMove(),p1[0]);
+            case 2: attack(dialga.getThirdMove(),p1[0]);
+            case 3: attack(dialga.getFourthMove(),p1[0]);
+        }
+        moveNum=(moveNum+1)%4;
+        menu();
     }
 
     // Written by Carson
@@ -161,7 +180,7 @@ public class Main {
         }
     }
 
-    public static void switchPokemon(){
+    public static void switchPokemon(){ //written by Harris
         System.out.println("Input a pokemon to switch to: ");
         int pokeNumber = input.nextInt();
         Pokemon temporary = p1[0];
