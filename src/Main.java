@@ -68,8 +68,8 @@ public class Main {
         System.out.printf("*   -|-    %s Lvl %d*%n",p1[0].getName(),p1[0].getLevel());
         System.out.printf("*   / \\                HP:%d*%n",p1[0].getHealth());
         System.out.println("*___________________________*");
-        System.out.println("*                   |Atk|Bag*");
-        System.out.println("*                   |Pok|Run*");
+        System.out.println("*               |1:Atk|2:Bag*");
+        System.out.println("*               |3:Pok|4:Run*");
         System.out.println("*****************************");
     }
 
