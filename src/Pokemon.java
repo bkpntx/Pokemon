@@ -1,4 +1,4 @@
-public class Pokemon { // Carson (Entire Class)
+public class Pokemon { // written by Carson
     Attack firstMove;
     Attack secondMove;
     Attack thirdMove;
@@ -9,7 +9,7 @@ public class Pokemon { // Carson (Entire Class)
     String name;
     boolean isBurned;
     boolean isPoisoned;
-
+    // basic constructor
     public Pokemon(Attack firstMove, Attack secondMove, Attack thirdMove, Attack fourthMove, int baseHealth, String name, int level){
         this.firstMove = firstMove;
         this.secondMove = secondMove;
@@ -22,7 +22,7 @@ public class Pokemon { // Carson (Entire Class)
         isBurned = false; // Pokemon will never have a status effect by default.
         isPoisoned = false;
     }
-
+    //getters and setters
     public Attack getFirstMove() {
         return firstMove;
     }
@@ -75,7 +75,6 @@ public class Pokemon { // Carson (Entire Class)
     public void setName(String name) {
         this.name = name;
     }
-
     public boolean isBurned() {
         return isBurned;
     }

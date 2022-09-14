@@ -1,5 +1,5 @@
 public class Item {
-    // Harris (Entire Class)
+    // written by Harris
 private int healing;
 private int quantity;
 private String name;
@@ -7,12 +7,14 @@ private String name;
     public Item(){
     }
 
+    //basic constructor
     public Item(String name, int healing,int quantity){
         this.name = name;
         this.healing = healing;
         this.quantity=quantity;
     }
 
+    //getters and setters
     public String getName(){
         return name;
     }
