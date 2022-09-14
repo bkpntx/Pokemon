@@ -68,7 +68,7 @@ public class Main {
         System.out.println("*Attacks                    *");
         System.out.println("*___________________________*");
         System.out.println(fill("*"+p1[0].getFirstMove().getName()));
-        System.out.println(fill("*"+p1[0].getSecondMove().getName()));
+        System.out.println(fill("*"+p1[0].getSecondMove().getName() ));
         System.out.println(fill("*"+p1[0].getThirdMove().getName()));
         System.out.println(fill("*"+p1[0].getFourthMove().getName()));
         System.out.println("*                           *");
@@ -83,10 +83,10 @@ public class Main {
         System.out.println("*****************************");
         System.out.println("*Bag                        *");
         System.out.println("*___________________________*");
-        System.out.println(fill("*"+items[0].getQuantity()+" "+items[0].getName()));
-        System.out.println(fill("*"+items[1].getQuantity()+" "+items[1].getName()));
-        System.out.println(fill("*"+items[2].getQuantity()+" "+items[2].getName()));
-        System.out.println(fill("*"+items[3].getQuantity()+" "+items[3].getName()));
+        System.out.println(fill("*"+items[0].getQuantity()+"x "+items[0].getName()));
+        System.out.println(fill("*"+items[1].getQuantity()+"x "+items[1].getName()));
+        System.out.println(fill("*"+items[2].getQuantity()+"x "+items[2].getName()));
+        System.out.println(fill("*"+items[3].getQuantity()+"x "+items[3].getName()));
         System.out.println("*                           *");
         System.out.println("*                           *");
         System.out.println("*                           *");
