@@ -237,78 +237,80 @@ public class Main {
     public static void main(String[] args) {
         // written by Harris
         basePrint();
-        System.out.println("Please select an option to use 1-4:");
-        int option = input.nextInt();
-        switch(menu(option)) {
-            case attack:
-                atkPrint(); // written by Brantley
-                System.out.println("Which attack 1-4 would you like to use:");
-                int atk = input.nextInt();
-                switch (atk) {
-                    case 1:
-                        attack(p1[0].getFirstMove(), dialga);
-                        break;
-                    case 2:
-                        attack(p1[0].getSecondMove(), dialga);
-                        break;
-                    case 3:
-                        attack(p1[0].getThirdMove(), dialga);
-                        break;
-                    case 4:
-                        attack(p1[0].getFourthMove(), dialga);
-                        break;
-                }
-                break;
-            case bag:
-                bagPrint(); // Written by Carson
-                System.out.print("Enter");
-                for (int i = 0; i < items.length; i++) {
-                    if (i + 1 == items.length) { // This is the last item, so there must be a special statement to change the grammar.
-                        System.out.print(" and " + i + " for " + items[i].getName() + ".");
-                        System.out.println(); // Added so that user input will go under the options instead of in the same line.
-                    } else {
-                        System.out.print(" " + i + " for " + items[i].getName() + ","); // gives users options based on the item's position in the item array.
+        while (0 == 0) { // Written by Carson
+            System.out.println("Please select an option to use 1-4:");
+            int option = input.nextInt();
+            switch (menu(option)) {
+                case attack:
+                    atkPrint(); // written by Brantley
+                    System.out.println("Which attack 1-4 would you like to use:");
+                    int atk = input.nextInt();
+                    switch (atk) {
+                        case 1:
+                            attack(p1[0].getFirstMove(), dialga);
+                            break;
+                        case 2:
+                            attack(p1[0].getSecondMove(), dialga);
+                            break;
+                        case 3:
+                            attack(p1[0].getThirdMove(), dialga);
+                            break;
+                        case 4:
+                            attack(p1[0].getFourthMove(), dialga);
+                            break;
                     }
-                }
-                int desiredItem = input.nextInt();
-                if (items[desiredItem].getName().contains("ball")) { // If the desired item is a ball, a ball will be thrown at the pokemon currently out.
-                    bag(items[desiredItem], p2[0]); // the target of the ball will always be whatever enemy pokemon is out, and the pokemon out is always in array slot 0.
-                } else {
-                    System.out.println("Which pokemon would you like to use " + items[desiredItem].getName() + " on?");
+                    break;
+                case bag:
+                    bagPrint(); // Written by Carson
                     System.out.print("Enter");
-                    for (int i = 0; i < p1.length; i++) {
-                        if (i + 1 == p1.length) {
+                    for (int i = 0; i < items.length; i++) {
+                        if (i + 1 == items.length) { // This is the last item, so there must be a special statement to change the grammar.
+                            System.out.print(" and " + i + " for " + items[i].getName() + ".");
+                            System.out.println(); // Added so that user input will go under the options instead of in the same line.
+                        } else {
+                            System.out.print(" " + i + " for " + items[i].getName() + ","); // gives users options based on the item's position in the item array.
+                        }
+                    }
+                    int desiredItem = input.nextInt();
+                    if (items[desiredItem].getName().contains("ball")) { // If the desired item is a ball, a ball will be thrown at the pokemon currently out.
+                        bag(items[desiredItem], p2[0]); // the target of the ball will always be whatever enemy pokemon is out, and the pokemon out is always in array slot 0.
+                    } else {
+                        System.out.println("Which pokemon would you like to use " + items[desiredItem].getName() + " on?");
+                        System.out.print("Enter");
+                        for (int i = 0; i < p1.length; i++) {
+                            if (i + 1 == p1.length) {
+                                System.out.print(" and " + i + " for " + p1[i].getName() + ".");
+                                System.out.println();
+                            } else {
+                                System.out.print(" " + i + " for " + p1[i].getName() + ",");// gives users options based on the pokemon's position in the pokemon array.
+                            }
+                        }
+                    }
+                    int desiredPokemon = input.nextInt();
+                    bag(items[desiredItem], p1[desiredPokemon]);
+                    break;
+                case pokemon:
+                    pokemonPrint(); // Written by Carson
+                    System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
+                    System.out.print("Enter");
+                    for (int i = 1; i < p1.length; i++) { // i starts at one since a pokemon cannot be swapped for itself.
+                        if (i + 1 == p1.length && p1[i].getHealth() != 0) {
                             System.out.print(" and " + i + " for " + p1[i].getName() + ".");
                             System.out.println();
                         } else {
-                            System.out.print(" " + i + " for " + p1[i].getName() + ",");// gives users options based on the pokemon's position in the pokemon array.
+                            if (p1[i].getHealth() != 0) { // A Pokemon with no health cannot be swapped in, thus it will not appear as a choice.
+                                System.out.print(" " + i + " for " + p1[i].getName() + ",");
+                            }
                         }
                     }
-                }
-                int desiredPokemon = input.nextInt();
-                bag(items[desiredItem], p1[desiredPokemon]);
-                break;
-            case pokemon:
-                pokemonPrint(); // Written by Carson
-                System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
-                System.out.print("Enter");
-                for (int i = 1; i < p1.length; i++) { // i starts at one since a pokemon cannot be swapped for itself.
-                    if (i + 1 == p1.length && p1[i].getHealth() != 0) {
-                        System.out.print(" and " + i + " for " + p1[i].getName() + ".");
-                        System.out.println();
-                    } else {
-                        if (p1[i].getHealth() != 0) {
-                            System.out.print(" " + i + " for " + p1[i].getName() + ",");
-                        }
-                    }
-                }
-                int swapFor = input.nextInt();
-                switchPokemon(p1[swapFor]);
-                System.out.println(p1[0].getName() + " is now in the battle!");
-                break;
-            case run:
-                run();
-                break;
+                    int swapFor = input.nextInt();
+                    switchPokemon(p1[swapFor]);
+                    System.out.println(p1[0].getName() + " is now in the battle!");
+                    break;
+                case run: // Written by Carson
+                    run();
+                    break;
+            }
         }
     }
 }
