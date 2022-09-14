@@ -1,6 +1,7 @@
 import java.util.Scanner;
 // Work shared between Brantley, Carson and Harris
 public class Main {
+    static Scanner input = new Scanner(System.in);
     //attacks written by Harris
     static Attack tackle = new Attack("Tackle", 35,false,false);
     static Attack accelerock = new Attack("Accelerock",40,false,false);
@@ -149,6 +150,7 @@ public class Main {
     }
 
     public static void switchPokemon(){
+        System.out.println("Input a pokemon to switch to: ");
 
     }
 
