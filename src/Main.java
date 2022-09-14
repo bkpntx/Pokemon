@@ -192,7 +192,7 @@ public class Main {
         }
     }
 
-    public static menuOpen menu(int option){
+    public static menuOpen menu(int option){ //written by Harris
         switch(option){
             case 0: return menuOpen.attack;
             case 1: return menuOpen.bag;
