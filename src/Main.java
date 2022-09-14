@@ -42,6 +42,7 @@ public class Main {
     static Pokeball pokeball = new Pokeball("Pokeball",0,1);
 
     //written by Brantley
+    static int moveNum = 0;
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
     static Item[] items = {potion, superPotion, hyperPotion, pokeball};
     public static String fill(String current){
@@ -123,9 +124,15 @@ public class Main {
 
     }
     public static void menu(){
-        Scanner input = new Scanner(System.in);
+
     }
     public static void enemyPlay(){
+        if (dialga.isBurned){
+            dialga.setHealth(dialga.getHealth()-5);
+        }
+        if (dialga.isPoisoned){
+            dialga.setHealth(dialga.getHealth()-10);
+        }
 
     }
 
@@ -149,7 +156,6 @@ public class Main {
     }
 
     public static void switchPokemon(){
-
     }
 
 
