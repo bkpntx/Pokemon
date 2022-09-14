@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     //attacks
     static Attack tackle = new Attack("Tackle", 35,false,false);
@@ -122,7 +124,7 @@ public class Main {
         System.out.println("*****************************");
     }
     public static void menu(){
-
+        Scanner input = new Scanner(System.in);
     }
     public static void enemyPlay(){
 
