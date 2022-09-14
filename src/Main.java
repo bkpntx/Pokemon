@@ -1,7 +1,6 @@
 import java.util.Scanner;
 // Work shared between Brantley, Carson and Harris
 public class Main {
-    static Scanner input = new Scanner(System.in);
     //attacks written by Harris
     static Attack tackle = new Attack("Tackle", 35,false,false);
     static Attack accelerock = new Attack("Accelerock",40,false,false);
@@ -43,6 +42,7 @@ public class Main {
     static Pokeball pokeball = new Pokeball("Pokeball",0,1);
 
     //written by Brantley
+    static int moveNum = 0;
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
     static Item[] items = {potion, superPotion, hyperPotion, pokeball};
     public static String fill(String current){
@@ -127,6 +127,12 @@ public class Main {
         Scanner input = new Scanner(System.in);
     }
     public static void enemyPlay(){
+        if (dialga.isBurned){
+            dialga.setHealth(dialga.getHealth()-5);
+        }
+        if (dialga.isPoisoned){
+            dialga.setHealth(dialga.getHealth()-10);
+        }
 
     }
 
