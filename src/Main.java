@@ -48,6 +48,7 @@ public class Main {
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
     static Pokemon[] p2 = {dialga};
     static Item[] items = {potion, superPotion, hyperPotion, pokeball};
+    // fills the print method such that the borders match
     public static String fill(String current){
         while (current.length()<28){
             current=current+" ";
@@ -56,6 +57,7 @@ public class Main {
     }
 
     //written by Brantley
+    //shows the default game state
     public static void basePrint(){
         System.out.println("*****************************");
         System.out.println(fill("*"+dialga.getName()+" Lvl "+dialga.getLevel()));
@@ -74,6 +76,7 @@ public class Main {
     }
 
     //written by Brantley
+    //displays attacks
     public static void atkPrint(){
         System.out.println("*****************************");
         System.out.println("*Attacks                    *");
@@ -92,6 +95,7 @@ public class Main {
     }
 
     //written by Brantley
+    //displays items in the bag
     public static void bagPrint(){
         System.out.println("*****************************");
         System.out.println("*Bag                        *");
@@ -110,6 +114,7 @@ public class Main {
     }
 
     //written by Brantley
+    //displays the trainer (player)'s 6 pokemon
     public static void pokemonPrint(){
         System.out.println("*****************************");
         System.out.println("*Pokemon                    *");
@@ -129,7 +134,9 @@ public class Main {
     public static void menu(){
         Scanner input = new Scanner(System.in);
     }
+
     // written by Brantley
+    // performs the enemy's (Dialga's) action
     public static void enemyPlay(){
         if (dialga.isBurned){
             dialga.setHealth(dialga.getHealth()-5);
@@ -154,12 +161,14 @@ public class Main {
     }
 
     // written by Carson
+    // ends the game when you select run
     public static void run(){
     System.out.println("You have fled the battle!");
     System.exit(0);
     }
 
     // written by Carson
+    // allows for an item to be select from the bag and be used on a pokemon
     public static void bag(Item item, Pokemon target){
         int maxHealth = target.getMaxHealth();
         if (item.getHealing() > 0){
@@ -176,6 +185,7 @@ public class Main {
     }
 
     // written by Brantley
+    // damages the enemy pokemon and applies an effect if present
     public static void attack(Attack hit, Pokemon target){
         target.setHealth(target.getHealth()-hit.getDamage());
         if (hit.isInflictsBurn()){
@@ -187,6 +197,7 @@ public class Main {
     }
 
     // written by Harris
+    // moves the pokemon in the array when selected to switch
     public static void switchPokemon(Pokemon pokemon){
         Pokemon temporary = p1[0];
         for(int i = 1; i<6; i++){
