@@ -149,7 +149,7 @@ public class Main {
         }
     }
 
-    public static void switchPokemon(){
+    public static void switchPokemon(){ //written by Harris
         System.out.println("Input a pokemon to switch to: ");
         int pokeNumber = input.nextInt();
         Pokemon temporary = p1[0];
