@@ -127,6 +127,7 @@ public class Main {
     public static void menu(){
         Scanner input = new Scanner(System.in);
     }
+    //Brantley wrote this
     public static void enemyPlay(){
         if (dialga.isBurned){
             dialga.setHealth(dialga.getHealth()-5);
@@ -134,7 +135,18 @@ public class Main {
         if (dialga.isPoisoned){
             dialga.setHealth(dialga.getHealth()-10);
         }
-
+        if (dialga.getHealth()<=0){
+            System.out.println("The player has won");
+            System.exit(0);
+        }
+        switch (moveNum){
+            case 0: attack(dialga.getFirstMove(),p1[0]);
+            case 1: attack(dialga.getSecondMove(),p1[0]);
+            case 2: attack(dialga.getThirdMove(),p1[0]);
+            case 3: attack(dialga.getFourthMove(),p1[0]);
+        }
+        moveNum=(moveNum+1)%4;
+        menu();
     }
 
     public static void run(){
