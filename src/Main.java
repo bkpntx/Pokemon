@@ -2,7 +2,7 @@ import java.util.Scanner;
 // Work shared between Brantley, Carson and Harris
 public class Main {
     static Scanner input = new Scanner(System.in);
-    //attacks written by Harris
+    //attacks written by Harris and Carson
     static Attack tackle = new Attack("Tackle", 35,false,false);
     static Attack accelerock = new Attack("Accelerock",40,false,false);
     static Attack ember = new Attack("Ember",40,false,false);
@@ -44,6 +44,7 @@ public class Main {
 
     //written by Brantley
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
+    static Pokemon[] p2 = {dialga};
     static Item[] items = {potion, superPotion, hyperPotion, pokeball};
     public static String fill(String current){
         while (current.length()<28){
@@ -130,13 +131,24 @@ public class Main {
 
     }
 
+    // Written by Carson
     public static void run(){
     System.out.println("You have fled the battle!");
     System.exit(0);
     }
 
-    public static void bag(){
-
+    // Written by Carson
+    public static void bag(Item item, Pokemon target){
+        if (item.getHealing() > 0){
+            target.setHealth(target.getHealth() + item.getHealing());
+            if(target.getHealth() > target.getMaxHealth()){
+                target.setHealth(target.getMaxHealth()); // Pokemon cannot exceed max health, so they will just be set to its max health if they do.
+            }
+        }
+        if(item.getHealing() == 0){
+            System.out.println(p2[0].getName()+" has been captured. Congratulations, the game is over!");
+            System.exit(0);
+        }
     }
 
     public static void attack(Attack hit, Pokemon target){
@@ -201,5 +213,6 @@ public class Main {
         enum menuOpen{battle, attack, bag, pokemon}
         System.out.println("Enter 0 to run, 1 to choose an attack, 2 to open your bag, and 3 to change pokemon");
         pokemonPrint();
+
     }
 }

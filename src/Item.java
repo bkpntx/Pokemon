@@ -1,5 +1,5 @@
 public class Item {
-    // Harris
+    // Harris (Entire Class)
 private int healing;
 private int quantity;
 private String name;
