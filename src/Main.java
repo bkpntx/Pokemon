@@ -192,10 +192,15 @@ public class Main {
     public static void main(String[] args) {
         bagPrint();
         enum menuOpen{battle, attack, bag, pokemon}
+        menuOpen menu = menuOpen.battle;
         System.out.println("Enter 0 to run, 1 to choose an attack, 2 to open your bag, and 3 to change pokemon");
-        pokemonPrint();
-        charmander.setHealth(10);
-        bag(hyperPotion, charmander);
-        System.out.println(charmander.getHealth());
+        int response = input.nextInt();
+
+        switch(response){
+            case 0: run();
+            case 1: ;
+            case 2: ;
+            case 3: ;
+        }
     }
 }
