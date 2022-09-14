@@ -189,45 +189,6 @@ public class Main {
         p1[pokeNumber] = temporary;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public static void main(String[] args) {
         bagPrint();
         enum menuOpen{battle, attack, bag, pokemon}
