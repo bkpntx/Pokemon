@@ -130,7 +130,21 @@ public class Main {
 
     }
 
+    public static void run(){
 
+    }
+
+    public static void bag(){
+
+    }
+
+    public static void attack(){
+
+    }
+
+    public static void switchPokemon(){
+
+    }
 
 
 
