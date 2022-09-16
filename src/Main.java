@@ -275,8 +275,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        basePrint();
         while (inPlay()) { // Written by Carson
-            basePrint();
             System.out.println("Please select an option to use 1-4:");
             int option = input.nextInt();
             switch (menu(option)) {
@@ -350,13 +350,13 @@ public class Main {
                     break;
             }
             // Written by Carson
+            basePrint();
             if (!canSubstitute() && option == 3){ // Option 3 means the user tried to substitute a pokemon, but if all other pokemon are dead, then they cannot. This if statement is meant to prevent their turn from being skipped.
-
+                // Do nothing and reset the turn.
             }
             else{
                 enemyPlay(); // Enemy will move after every turn unless the user picks an option not possible.
                 basePrint();
-                System.out.println(p2[0].getName()+" has moved. Here is the updated game: ");
             }
         }
         System.out.println("All your pokemon are dead. You have lost.");
