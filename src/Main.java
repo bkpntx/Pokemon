@@ -238,7 +238,7 @@ public class Main {
                 counter++;
             }
         }
-        if (counter==6){
+        if (counter>0){
             return true;
         }
         else {
@@ -319,5 +319,6 @@ public class Main {
             basePrint();
             enemyPlay(); // Enemy will move after every turn, regardless of user's choice.
         }
+        System.out.println("All your pokemon are dead. You have lost.");
     }
 }
