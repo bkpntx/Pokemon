@@ -24,7 +24,7 @@ public class Main {
     static Attack slam = new Attack("Slam",70,false,false);
     static Attack wingAttack = new Attack("Wing Attack",50,false,false);
     static Attack roarOfTime = new Attack("Roar of Time",120,false,false);
-    static Attack toxic = new Attack("Toxic",0,false,true);
+    static Attack toxic = new Attack("Toxic",5,false,true);
     static Attack metalClaw = new Attack("Metal Claw",60,false,false);
     static Attack dragonClaw = new Attack("Dragon Claw",40,false,false);
 
@@ -158,6 +158,12 @@ public class Main {
             case 3: attack(dialga.getFourthMove(),p1[0]);break;
         }
         moveNum=(moveNum+1)%4;
+        if (p1[0].isBurned){
+            p1[0].setHealth(p1[0].getHealth()-5);
+        }
+        if (p1[0].isPoisoned){
+            p1[0].setHealth(p1[0].getHealth()-10);
+        }
         if (p1[0].getHealth()<= 0&&inPlay()){ // Written by Carson
             pokemonPrint();
             if (p1[0].getHealth() < 0){
