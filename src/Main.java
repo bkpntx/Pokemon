@@ -158,7 +158,7 @@ public class Main {
             case 3: attack(dialga.getFourthMove(),p1[0]);
         }
         moveNum=(moveNum+1)%4;
-        if (p1[0].getHealth()<=0){ // Written by Carson
+        if (p1[0].getHealth()<=0&&inPlay()){ // Written by Carson
             pokemonPrint();
             System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
             for (int i = 1; i < p1.length; i++) { // i starts at one since a pokemon cannot be swapped for itself.
