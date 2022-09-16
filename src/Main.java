@@ -55,6 +55,12 @@ public class Main {
         }
         return current+"*";
     }
+    public static String reverseFill(String current){
+        while(current.length()<20){
+            current=" "+current;
+        }
+        return current;
+    }
 
     //written by Brantley
     //shows the default game state
@@ -67,8 +73,8 @@ public class Main {
         System.out.println("*                     / \\   *");
         System.out.println("*                           *");
         System.out.println("*    0                      *");
-        System.out.printf("*   -|-    %s Lvl %d*%n",p1[0].getName(),p1[0].getLevel());
-        System.out.printf("*   / \\                HP:%d*%n",p1[0].getHealth());
+        System.out.println("*   -|-  "+reverseFill(p1[0].getName()+" Lvl "+p1[0].getLevel()+"*"));
+        System.out.println("*   / \\  "+reverseFill("HP:"+p1[0].getHealth()+"*"));
         System.out.println("*___________________________*");
         System.out.println("*               |1:Atk|2:Bag*");
         System.out.println("*               |3:Pok|4:Run*");
