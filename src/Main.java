@@ -158,8 +158,11 @@ public class Main {
             case 3: attack(dialga.getFourthMove(),p1[0]);
         }
         moveNum=(moveNum+1)%4;
-        if (p1[0].getHealth()<=0&&inPlay()){ // Written by Carson
+        if (p1[0].getHealth()<= 0&&inPlay()){ // Written by Carson
             pokemonPrint();
+            if (p1[0].getHealth() < 0){
+                System.out.println(p1[0].getName()+" has fainted. Please pick a new pokemon.");
+            }
             System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
             for (int i = 1; i < p1.length; i++) { // i starts at one since a pokemon cannot be swapped for itself.
                 if (p1[i].getHealth()>0){
@@ -231,6 +234,8 @@ public class Main {
         }
         return null;
     }
+
+    // Written by Brantley
     public static boolean inPlay(){
         int counter=0;
         for (int i=0;i<p1.length;i++){
@@ -245,10 +250,26 @@ public class Main {
             return false;
         }
     }
+
+    //  Written by Carson
+    public static boolean canSubstitute(){ // If there are no other Pokemon alive, then the user cannot try to sub in another.
+        int counter=0;
+        for (int i=0; i < p1.length; i++){
+            if (p1[i].getHealth() <= 0){
+                counter++;
+            }
+        }
+        if (counter == p1.length - 1){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     public static void main(String[] args) {
         while (inPlay()) { // Written by Carson
             basePrint();
-
             System.out.println("Please select an option to use 1-4:");
             int option = input.nextInt();
             switch (menu(option)) {
@@ -300,24 +321,36 @@ public class Main {
                     int desiredPokemon = input.nextInt();
                     bag(items[desiredItem], p1[desiredPokemon]);
                     break;
-                case pokemon:
-                    pokemonPrint(); // Written by Carson
-                    System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
-                    for (int j = 1; j < p1.length; j++) { // i starts at one since a pokemon cannot be swapped for itself.
-                        if (p1[j].getHealth()>0){
-                            System.out.println(j+": "+p1[j].getName());
+                case pokemon: // Written by Carson
+                    if (canSubstitute()) {
+                        pokemonPrint();
+                        System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
+                        for (int j = 1; j < p1.length; j++) { // i starts at one since a pokemon cannot be swapped for itself.
+                            if (p1[j].getHealth() > 0) {
+                                System.out.println(j + ": " + p1[j].getName());
+                            }
                         }
+                        int swapFor = input.nextInt();
+                        switchPokemon(p1[swapFor]);
+                        System.out.println(p1[0].getName() + " is now in the battle!");
                     }
-                    int swapFor = input.nextInt();
-                    switchPokemon(p1[swapFor]);
-                    System.out.println(p1[0].getName() + " is now in the battle!");
+                    else{
+                        System.out.println("All your other pokemon have fainted. You cannot substitute.");
+                    }
                     break;
                 case run: // Written by Carson
                     run();
                     break;
             }
-            basePrint();
-            enemyPlay(); // Enemy will move after every turn, regardless of user's choice.
+            // Written by Carson
+            if (!canSubstitute() && option == 3){ // Option 3 means the user tried to substitute a pokemon, but if all other pokemon are dead, then they cannot. This if statement is meant to prevent their turn from being skipped.
+
+            }
+            else{
+                enemyPlay(); // Enemy will move after every turn unless the user picks an option not possible.
+                basePrint();
+                System.out.println(p2[0].getName()+" has moved. Here is the updated game: ");
+            }
         }
         System.out.println("All your pokemon are dead. You have lost.");
     }
