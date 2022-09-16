@@ -44,7 +44,9 @@ public class Main {
     static Pokeball pokeball = new Pokeball("Pokeball",0,1);
 
     //written by Brantley
+    //will be used to track which move dialga is on
     static int moveNum = 0;
+    //each player's team of pokemon
     static Pokemon[] p1 = {charmander,squirtle,bulbasaur,gengar,dragonite,meowth};
     static Pokemon[] p2 = {dialga};
     static Item[] items = {potion, superPotion, hyperPotion, pokeball};
@@ -55,6 +57,7 @@ public class Main {
         }
         return current+"*";
     }
+    //same as above but it adds spaces in front of the text instead of behind
     public static String reverseFill(String current){
         while(current.length()<20){
             current=" "+current;
@@ -82,7 +85,7 @@ public class Main {
     }
 
     //written by Brantley
-    //displays attacks
+    //displays attack game state
     public static void atkPrint(){
         System.out.println("*****************************");
         System.out.println("*Attacks                    *");
@@ -120,7 +123,7 @@ public class Main {
     }
 
     //written by Brantley
-    //displays the trainer (player)'s 6 pokemon
+    //displays the trainer (player)'s living pokemon that are not currently in play
     public static void pokemonPrint(){
         System.out.println("*****************************");
         System.out.println("*Pokemon                    *");
@@ -140,6 +143,7 @@ public class Main {
 
     // written by Brantley
     // performs the enemy's (Dialga's) action
+    //also effects burn and poison on dialga and the player's current pokemon
     public static void enemyPlay(){
         if (dialga.isBurned){
             dialga.setHealth(dialga.getHealth()-5);
@@ -147,6 +151,7 @@ public class Main {
         if (dialga.isPoisoned){
             dialga.setHealth(dialga.getHealth()-10);
         }
+        //if dialga is dead, tell the player they won
         if (dialga.getHealth()<=0){
             System.out.println("You have won. All enemies have been defeated!");
             System.exit(0);
@@ -157,6 +162,7 @@ public class Main {
             case 2: attack(dialga.getThirdMove(),p1[0]);break;
             case 3: attack(dialga.getFourthMove(),p1[0]);break;
         }
+        //moves the attack that dialga will do next
         moveNum=(moveNum+1)%4;
         if (p1[0].isBurned){
             p1[0].setHealth(p1[0].getHealth()-5);
@@ -232,6 +238,7 @@ public class Main {
     }
 
     // written by Harris
+    //sets the current game setting
     public static menuOpen menu(int option){
         switch(option){
             case 1: return menuOpen.attack;
@@ -243,6 +250,7 @@ public class Main {
     }
 
     // Written by Brantley
+    //checks if any of the player's pokemon are alive
     public static boolean inPlay(){
         int counter=0;
         for (int i=0;i<p1.length;i++){
@@ -282,6 +290,7 @@ public class Main {
             switch (menu(option)) {
                 case attack:
                     atkPrint(); // written by Brantley
+                    //attacks dialga
                     System.out.println("Which attack 1-4 would you like to use:");
                     int atk = input.nextInt();
                     switch (atk) {
@@ -301,6 +310,7 @@ public class Main {
                     break;
                 case bag:
                     bagPrint(); // Written by Carson
+                    //uses items
                     System.out.print("Enter");
                     for (int j = 0; j < items.length; j++) {
                         if (items[j].getQuantity() > 0) {
