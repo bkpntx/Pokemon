@@ -235,6 +235,9 @@ public class Main {
     public static void main(String[] args) {
         while (0 == 0) { // Written by Carson
             basePrint();
+            for (int i = 0; i < p1.length; i++){
+                if(p1[i].getHealth() > 0){
+
             System.out.println("Please select an option to use 1-4:");
             int option = input.nextInt();
             switch (menu(option)) {
@@ -260,13 +263,13 @@ public class Main {
                 case bag:
                     bagPrint(); // Written by Carson
                     System.out.print("Enter");
-                    for (int i = 0; i < items.length; i++) {
-                        if (items[i].getQuantity() > 0) {
-                            if (i + 1 == items.length) { // This is the last item, so there must be a special statement to change the grammar.
-                                System.out.print(" and " + i + " for " + items[i].getName() + ".");
+                    for (int j = 0; j < items.length; j++) {
+                        if (items[j].getQuantity() > 0) {
+                            if (j + 1 == items.length) { // This is the last item, so there must be a special statement to change the grammar.
+                                System.out.print(" and " + j + " for " + items[j].getName() + ".");
                                 System.out.println(); // Added so that user input will go under the options instead of in the same line.
                             } else {
-                                System.out.print(" " + i + " for " + items[i].getName() + ","); // gives users options based on the item's position in the item array.
+                                System.out.print(" " + j + " for " + items[j].getName() + ","); // gives users options based on the item's position in the item array.
                             }
                         }
                     }
@@ -277,9 +280,9 @@ public class Main {
                     else {
                         System.out.println("Which pokemon would you like to use " + items[desiredItem].getName() + " on?");
                         System.out.print("Enter ");
-                        for (int i = 0; i < p1.length; i++) {
-                            if (p1[i].getHealth()>0){
-                                System.out.println(i+": "+p1[i].getName());
+                        for (int j = 0; j < p1.length; j++) {
+                            if (p1[j].getHealth()>0){
+                                System.out.println(j+": "+p1[j].getName());
                             }
                         }
                     }
@@ -289,9 +292,9 @@ public class Main {
                 case pokemon:
                     pokemonPrint(); // Written by Carson
                     System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
-                    for (int i = 1; i < p1.length; i++) { // i starts at one since a pokemon cannot be swapped for itself.
-                        if (p1[i].getHealth()>0){
-                            System.out.println(i+": "+p1[i].getName());
+                    for (int j = 1; j < p1.length; j++) { // i starts at one since a pokemon cannot be swapped for itself.
+                        if (p1[j].getHealth()>0){
+                            System.out.println(j+": "+p1[j].getName());
                         }
                     }
                     int swapFor = input.nextInt();
@@ -304,6 +307,7 @@ public class Main {
             }
             basePrint();
             enemyPlay(); // Enemy will move after every turn, regardless of user's choice.
+        } }
         }
     }
 }
