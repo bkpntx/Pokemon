@@ -210,7 +210,7 @@ public class Main {
         if (hit.isInflictsPoison()){
             target.setPoisoned(true);
         }
-        System.out.println(target.getName()+" has been hit by "+hit.getName());
+        System.out.println(target.getName()+" has been hit by "+hit.getName()+".");
     }
 
     // written by Harris
