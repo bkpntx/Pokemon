@@ -148,7 +148,7 @@ public class Main {
             dialga.setHealth(dialga.getHealth()-10);
         }
         if (dialga.getHealth()<=0){
-            System.out.println("The player has won");
+            System.out.println("You have won. All enemies have been defeated!");
             System.exit(0);
         }
         switch (moveNum){
