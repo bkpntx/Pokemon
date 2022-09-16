@@ -231,12 +231,23 @@ public class Main {
         }
         return null;
     }
-
+    public static boolean inPlay(){
+        int counter=0;
+        for (int i=0;i<p1.length;i++){
+            if (p1[i].getHealth()>0){
+                counter++;
+            }
+        }
+        if (counter==6){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     public static void main(String[] args) {
-        while (0 == 0) { // Written by Carson
+        while (inPlay()) { // Written by Carson
             basePrint();
-            for (int i = 0; i < p1.length; i++){
-                if(p1[i].getHealth() > 0){
 
             System.out.println("Please select an option to use 1-4:");
             int option = input.nextInt();
@@ -307,7 +318,6 @@ public class Main {
             }
             basePrint();
             enemyPlay(); // Enemy will move after every turn, regardless of user's choice.
-        } }
         }
     }
 }
