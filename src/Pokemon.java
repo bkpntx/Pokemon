@@ -9,6 +9,7 @@ public class Pokemon { // written by Carson
     String name;
     boolean isBurned;
     boolean isPoisoned;
+    boolean isDead;
     // basic constructor
     public Pokemon(Attack firstMove, Attack secondMove, Attack thirdMove, Attack fourthMove, int baseHealth, String name, int level){
         this.firstMove = firstMove;
@@ -21,6 +22,7 @@ public class Pokemon { // written by Carson
         this.name = name;
         isBurned = false; // Pokemon will never have a status effect by default.
         isPoisoned = false;
+        isDead = false;
     }
     //getters and setters
     public Attack getFirstMove() {
@@ -87,5 +89,12 @@ public class Pokemon { // written by Carson
     }
     public void setPoisoned(boolean poisoned) {
         isPoisoned = poisoned;
+    }
+
+    public boolean isDead() {
+        return isDead;
+    }
+    public void setDead(boolean dead) {
+        isDead = dead;
     }
 }

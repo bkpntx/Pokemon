@@ -23,10 +23,10 @@ public class Main {
     static Attack hydroPump = new Attack("Hydro Pump",120,false,false);
     static Attack slam = new Attack("Slam",70,false,false);
     static Attack wingAttack = new Attack("Wing Attack",50,false,false);
-    static Attack roarOfTime = new Attack("Roar of Time",140,false,false);
+    static Attack roarOfTime = new Attack("Roar of Time",120,false,false);
     static Attack toxic = new Attack("Toxic",0,false,true);
     static Attack metalClaw = new Attack("Metal Claw",60,false,false);
-    static Attack dragonClaw = new Attack("Dragon Claw",80,false,false);
+    static Attack dragonClaw = new Attack("Dragon Claw",40,false,false);
 
     //pokemon written by Harris
     static Pokemon charmander = new Pokemon(tackle,ember,scratch,smokescreen,30,"Charmander", 15);
@@ -131,9 +131,6 @@ public class Main {
         System.out.println("*****************************");
 
     }
-    public static void menu(){
-        Scanner input = new Scanner(System.in);
-    }
 
     // written by Brantley
     // performs the enemy's (Dialga's) action
@@ -155,8 +152,8 @@ public class Main {
             case 3: attack(dialga.getFourthMove(),p1[0]);
         }
         moveNum=(moveNum+1)%4;
-        if (p1[0].getHealth()<=0){
-            pokemonPrint(); // Written by Carson
+        if (p1[0].getHealth()<=0){ // Written by Carson
+            pokemonPrint();
             System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
             for (int i = 1; i < p1.length; i++) { // i starts at one since a pokemon cannot be swapped for itself.
                 if (p1[i].getHealth()>0){
@@ -191,6 +188,7 @@ public class Main {
             System.out.println(target.getName()+" has been captured. Congratulations, the game is over!");
             System.exit(0);
         }
+        item.setQuantity(item.getQuantity() - 1);
     }
 
     // written by Brantley
@@ -257,25 +255,25 @@ public class Main {
                     bagPrint(); // Written by Carson
                     System.out.print("Enter");
                     for (int i = 0; i < items.length; i++) {
-                        if (i + 1 == items.length) { // This is the last item, so there must be a special statement to change the grammar.
-                            System.out.print(" and " + i + " for " + items[i].getName() + ".");
-                            System.out.println(); // Added so that user input will go under the options instead of in the same line.
-                        } else {
-                            System.out.print(" " + i + " for " + items[i].getName() + ","); // gives users options based on the item's position in the item array.
+                        if (items[i].getQuantity() > 0) {
+                            if (i + 1 == items.length) { // This is the last item, so there must be a special statement to change the grammar.
+                                System.out.print(" and " + i + " for " + items[i].getName() + ".");
+                                System.out.println(); // Added so that user input will go under the options instead of in the same line.
+                            } else {
+                                System.out.print(" " + i + " for " + items[i].getName() + ","); // gives users options based on the item's position in the item array.
+                            }
                         }
                     }
                     int desiredItem = input.nextInt();
                     if (items[desiredItem].getName().contains("ball")) { // If the desired item is a ball, a ball will be thrown at the pokemon currently out.
                         bag(items[desiredItem], p2[0]); // the target of the ball will always be whatever enemy pokemon is out, and the pokemon out is always in array slot 0.
-                    } else {
+                    }
+                    else {
                         System.out.println("Which pokemon would you like to use " + items[desiredItem].getName() + " on?");
-                        System.out.print("Enter");
+                        System.out.print("Enter ");
                         for (int i = 0; i < p1.length; i++) {
-                            if (i + 1 == p1.length) {
-                                System.out.print(" and " + i + " for " + p1[i].getName() + ".");
-                                System.out.println();
-                            } else {
-                                System.out.print(" " + i + " for " + p1[i].getName() + ",");// gives users options based on the pokemon's position in the pokemon array.
+                            if (p1[i].getHealth()>0){
+                                System.out.println(i+": "+p1[i].getName());
                             }
                         }
                     }
