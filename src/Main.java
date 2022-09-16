@@ -152,10 +152,10 @@ public class Main {
             System.exit(0);
         }
         switch (moveNum){
-            case 0: attack(dialga.getFirstMove(),p1[0]);
-            case 1: attack(dialga.getSecondMove(),p1[0]);
-            case 2: attack(dialga.getThirdMove(),p1[0]);
-            case 3: attack(dialga.getFourthMove(),p1[0]);
+            case 0: attack(dialga.getFirstMove(),p1[0]); break;
+            case 1: attack(dialga.getSecondMove(),p1[0]); break;
+            case 2: attack(dialga.getThirdMove(),p1[0]); break;
+            case 3: attack(dialga.getFourthMove(),p1[0]); break;
         }
         moveNum=(moveNum+1)%4;
         if (p1[0].getHealth()<=0){ // Written by Carson
@@ -207,6 +207,7 @@ public class Main {
         if (hit.isInflictsPoison()){
             target.setPoisoned(true);
         }
+        System.out.println("Used " + hit.getName() + " on " + target.getName() + "!");
     }
 
     // written by Harris
@@ -231,6 +232,9 @@ public class Main {
         }
         return null;
     }
+
+    // written by Brantley
+    // checks if there are any pokemon alive
     public static boolean inPlay(){
         int counter=0;
         for (int i=0;i<p1.length;i++){
@@ -245,6 +249,8 @@ public class Main {
             return false;
         }
     }
+
+    //written by Harris
     public static void main(String[] args) {
         while (inPlay()) { // Written by Carson
             basePrint();
@@ -253,7 +259,9 @@ public class Main {
             int option = input.nextInt();
             switch (menu(option)) {
                 case attack:
-                    atkPrint(); // written by Brantley
+                    atkPrint();
+                    // written by Brantley
+                    // allows the player to choose a move to use against the enemy
                     System.out.println("Which attack 1-4 would you like to use:");
                     int atk = input.nextInt();
                     switch (atk) {
@@ -272,7 +280,10 @@ public class Main {
                     }
                     break;
                 case bag:
-                    bagPrint(); // Written by Carson
+                    // written by Carson
+                    // allows the player to select a healing item and use it on an allied pokemon
+                    // if the player selects pokeball it ends the game
+                    bagPrint();
                     System.out.print("Enter");
                     for (int j = 0; j < items.length; j++) {
                         if (items[j].getQuantity() > 0) {
@@ -301,7 +312,9 @@ public class Main {
                     bag(items[desiredItem], p1[desiredPokemon]);
                     break;
                 case pokemon:
-                    pokemonPrint(); // Written by Carson
+                    // written by Carson
+                    // allows a person to swap another pokemon for their pokemon currently in play or dead
+                    pokemonPrint();
                     System.out.println("Which pokemon would you like to swap for " + p1[0].getName() + "?");
                     for (int j = 1; j < p1.length; j++) { // i starts at one since a pokemon cannot be swapped for itself.
                         if (p1[j].getHealth()>0){
@@ -312,12 +325,14 @@ public class Main {
                     switchPokemon(p1[swapFor]);
                     System.out.println(p1[0].getName() + " is now in the battle!");
                     break;
-                case run: // Written by Carson
+                case run:
                     run();
                     break;
             }
+            // prints out the basic state of the game
             basePrint();
-            enemyPlay(); // Enemy will move after every turn, regardless of user's choice.
+            // enemy will move after every turn regardless of the user's choice
+            enemyPlay();
         }
         System.out.println("All your pokemon are dead. You have lost.");
     }

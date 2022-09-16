@@ -1,4 +1,4 @@
-public class Pokemon { // written by Carson
+public class Pokemon { // written by Carson and Harris
     Attack firstMove;
     Attack secondMove;
     Attack thirdMove;
