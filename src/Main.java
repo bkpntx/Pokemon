@@ -152,10 +152,10 @@ public class Main {
             System.exit(0);
         }
         switch (moveNum){
-            case 0: attack(dialga.getFirstMove(),p1[0]);
-            case 1: attack(dialga.getSecondMove(),p1[0]);
-            case 2: attack(dialga.getThirdMove(),p1[0]);
-            case 3: attack(dialga.getFourthMove(),p1[0]);
+            case 0: attack(dialga.getFirstMove(),p1[0]);break;
+            case 1: attack(dialga.getSecondMove(),p1[0]);break;
+            case 2: attack(dialga.getThirdMove(),p1[0]);break;
+            case 3: attack(dialga.getFourthMove(),p1[0]);break;
         }
         moveNum=(moveNum+1)%4;
         if (p1[0].getHealth()<= 0&&inPlay()){ // Written by Carson
@@ -210,6 +210,7 @@ public class Main {
         if (hit.isInflictsPoison()){
             target.setPoisoned(true);
         }
+        System.out.println(target.getName()+" has been hit by "+hit.getName());
     }
 
     // written by Harris
